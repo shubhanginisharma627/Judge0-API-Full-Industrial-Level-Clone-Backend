@@ -2,14 +2,15 @@ import express from "express";
 import { spawn } from "child_process";
 import connectDB from "./db.js";
 import Submission from "./Submission.js";
-import { User } from "./User.js";
+import  User  from "./User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { body, validationResult } from "express-validator";
 import { VM } from "vm2";
 import cluster from 'cluster';
+import os from 'os';
 
-const numCPUs = require('os').cpus().length;
+const numCPUs = os.cpus().length;
 
 const app = express();
 app.use(express.json());

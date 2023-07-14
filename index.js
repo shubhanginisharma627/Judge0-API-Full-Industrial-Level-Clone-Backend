@@ -1,13 +1,14 @@
-const express = require("express");
-const { spawn } = require("child_process");
-const connectDB = require("./db");
-const Submission = require("./Submission");
-const User = require("./User");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const { body, validationResult } = require("express-validator");
-const { VM } = require("vm2");
-const cluster = require('cluster');
+import express from "express";
+import { spawn } from "child_process";
+import connectDB from "./db.js";
+import Submission from "./Submission.js";
+import { User } from "./User.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { body, validationResult } from "express-validator";
+import { VM } from "vm2";
+import cluster from 'cluster';
+
 const numCPUs = require('os').cpus().length;
 
 const app = express();
